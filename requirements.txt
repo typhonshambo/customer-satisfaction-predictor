@@ -1,0 +1,4 @@
+"zenml["server"]"
+pyarrow
+scikit-learn
+mlflow
