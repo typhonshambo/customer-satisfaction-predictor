@@ -38,6 +38,7 @@ def train_model(
                 mlflow.sklearn.autolog()
                 model = LinearRegressionModel()
                 trained_model = model.train(x_train, y_train)
+                logging.info('Model trained successfully')
                 return trained_model
             except Exception as e:
                 logging.error(f'Model {config.model_name} not supported')
