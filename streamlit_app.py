@@ -1,5 +1,5 @@
 import json
-
+import subprocess
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -7,7 +7,24 @@ from PIL import Image
 from pipelines.deployment_pipeline import prediction_service_loader
 from run_deployment import main as run_main
 
+def run_zenml_commands():
+    # Define ZenML commands
+    commands = [
+        "zenml integration install mlflow -y",
+        "zenml experiment-tracker register mlflow_tracker --flavor=mlflow",
+        "zenml model-deployer register mlflow --flavor=mlflow",
+        "zenml stack register mlflow_stack -a default -o default -d mlflow -e mlflow_tracker --set",
+        "zenml up"
+    ]
+    # Execute ZenML commands one by one
+    for command in commands:
+        subprocess.run(command, shell=True)
+
+# Run ZenML commands when the script is executed
+run_zenml_commands()
+
 def main():
+    
     st.title("End to End Customer Satisfaction Pipeline with ZenML")
 
     '''
