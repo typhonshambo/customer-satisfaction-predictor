@@ -89,7 +89,13 @@ def main():
             st.write(
                 "No service could be found. The pipeline will be run first to create a service."
             )
-            run_main()
+            run_main(
+
+                data_path='data/olist_customers_dataset.csv',
+                min_accuracy=0,  # Specify your desired minimum accuracy
+                workers=3,
+                timeout=60,
+            )
 
         df = pd.DataFrame(
             {
