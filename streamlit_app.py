@@ -21,7 +21,7 @@ def run_zenml_commands():
         subprocess.run(command, shell=True)
 
 # Run ZenML commands when the script is executed
-run_zenml_commands()
+
 
 def main():
     
@@ -138,4 +138,5 @@ def main():
     '''
 
 if __name__ == "__main__":
+    run_zenml_commands()
     main()
