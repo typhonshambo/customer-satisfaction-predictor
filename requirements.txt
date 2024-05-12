@@ -1,4 +1,4 @@
-"zenml["server"]"
+zenml[server]
 pyarrow
 scikit-learn
 mlflow
