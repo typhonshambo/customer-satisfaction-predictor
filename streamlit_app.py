@@ -5,8 +5,7 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 from pipelines.deployment_pipeline import prediction_service_loader
-from run_deployment import main
-
+from run_deployment import main as run_main
 
 def main():
     st.title("End to End Customer Satisfaction Pipeline with ZenML")
