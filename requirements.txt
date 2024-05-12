@@ -1,4 +1,4 @@
-zenml
+zenml=0.57.0
 pyarrow
 scikit-learn
 mlflow
